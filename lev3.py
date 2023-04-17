@@ -56,3 +56,15 @@ for i in range(len(test_file)):
 df = pd.DataFrame(d, columns=["ref1", "ref2",
                   "1-nn", "tslearn_1-nn"], index=test_folder)
 print(df)
+
+from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.pyplot as plt
+
+fig=plt.figure()
+ax=fig.add_subplot(projection='3d')
+ax.plot(reference_1[:,0], reference_1[:,1], reference_2[:,2], c='red', marker='*', linestyle='-',label='reference 1')
+ax.plot(reference_2[:,0], reference_2[:,1], reference_2[:,2], c='green',marker='*', linestyle='-', label='reference 2')
+for i in range(len(test_file)):
+    ax.plot(test_file[i][:,0], test_file[i][:,1], test_file[i][:,2], linestyle='--', linewidth='1.5', label='test '+str(i+1))
+plt.legend()
+plt.show()
