@@ -57,6 +57,8 @@ df = pd.DataFrame(d, columns=["ref1", "ref2",
                   "1-nn", "tslearn_1-nn"], index=test_folder)
 print(df)
 
+#visualization
+
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 
